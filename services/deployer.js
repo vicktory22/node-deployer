@@ -5,7 +5,7 @@ const deploy = (repository) => {
   const repo = config.repositories[repository];
 
   exec(
-    `cd ${repo.dirPath} && git pull && npm i --only=production && pm2 restart ecosystem.config.js`,
+    `cd ${repo.dirPath} && git pull && npm ci --only=production && pm2 restart ecosystem.config.js`,
     (error) => {
       if (error) throw error;
     }
